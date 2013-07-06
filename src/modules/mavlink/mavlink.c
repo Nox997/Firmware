@@ -428,8 +428,10 @@ int mavlink_open_uart(int baud, const char *uart_name, struct termios *uart_conf
 
 	case 921600: speed = B921600; break;
 
+    case 4000000: speed = 4000000; break;
+
 	default:
-		fprintf(stderr, "[mavlink] ERROR: Unsupported baudrate: %d\n\tsupported examples:\n\n\t9600\n19200\n38400\n57600\n115200\n230400\n460800\n921600\n\n", baud);
+		fprintf(stderr, "[mavlink] ERROR: Unsupported baudrate: %d\n\tsupported examples:\n\n\t9600\n19200\n38400\n57600\n115200\n230400\n460800\n921600\n4000000\n\n", baud);
 		return -EINVAL;
 	}
 
